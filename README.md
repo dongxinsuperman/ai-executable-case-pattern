@@ -1,8 +1,8 @@
-# AI 可消费测试用例模式
+# AI 可消费测试用例模式 / AI-Consumable Test Case Pattern
 
-> 推荐 GitHub 仓库名：`ai-executable-case-pattern` 或 `ai-consumable-testcase`。
+把 feature list / PRD 生成的测试用例，写成 AI 可以直接消费、执行、验证的结构化脚本。
 
-这个仓库用于沉淀一种面向 AI 执行时代的测试 case 模式：把 feature list / PRD 生成的测试用例，写成 AI 可以直接消费、执行、验证的结构化脚本。
+Turn feature lists and PRDs into structured test cases that AI agents can consume, execute, and verify.
 
 它不是一个可以原样套进所有公司的万能模板。公开版只保留通用方法论和 baseline skill；真正落地时，每个团队都应该结合自己的产品形态、测试环境、数据构造方式、异常注入工具和执行器能力继续打磨。
 
