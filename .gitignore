@@ -1,0 +1,8 @@
+# Keep the original company-specific skill local only.
+/source-company/
+
+# Local notes and generated artifacts.
+.DS_Store
+*.tmp
+*.log
+
