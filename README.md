@@ -18,23 +18,17 @@ Turn feature lists and PRDs into structured test cases that AI agents can consum
 
 ```mermaid
 flowchart TD
-    A["Feature list / PRD<br/>需求唯一信源"] --> B["Phase 1<br/>解析模块、功能点、规则、流程、验收项"]
-    B --> C["Phase 2<br/>拆解测试功能点"]
-    C --> D["Phase 3<br/>生成候选 case"]
-    D --> E{"写法层门禁<br/>case 写得可执行吗？"}
-    E -- "不通过" --> E1["改写：单线瀑布、唯一断言、UI 有据、字段职责清晰"]
-    E1 --> E
-    E -- "通过" --> F{"信息层门禁<br/>真值补齐了吗？"}
-    F -- "不通过" --> F1["反问：账号、入口路径、测试数据、异常注入、真实 UI 形态"]
-    F1 --> F
-    F -- "通过" --> G{"路由层门禁<br/>适合 AI 自动执行吗？"}
-    G -- "需要人工" --> G1["标记人工：跨端、硬件、真实环境、超长流程等边界"]
-    G -- "可自动" --> H["AI 可消费 case<br/>标题 / 前置 / 步骤 / 预期四字段自洽"]
-    G1 --> H
-    H --> I["AI PHONE / 其他执行器<br/>执行、观察、断言、报告"]
-    I --> J["执行日志与失败归因"]
-    J --> K["规则反哺<br/>更新 rules / questionnaire / routing"]
-    K -. "持续打磨" .-> E
+    A["Feature list / PRD"] --> B["生成候选 case"]
+    B --> C{"三层门禁"}
+    C --> C1["写法层：能不能跑"]
+    C --> C2["信息层：真值够不够"]
+    C --> C3["路由层：AI 还是人工"]
+    C1 --> D["AI 可消费 case"]
+    C2 --> D
+    C3 --> D
+    D --> E["AI PHONE / 其他执行器"]
+    E --> F["执行日志"]
+    F -. "反哺规则" .-> C
 ```
 
 ## 从 Feature List 到 Case
